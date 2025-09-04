@@ -118,3 +118,35 @@ footer {
   transition: 0.3s;
 }
 .btn:hover { background: #e68900; }
+<!-- Add to bottom of <body> -->
+<a href="assets/resume.pdf" class="resume-float-btn" download target="_blank">Resume</a>
+/* Add to style.css */
+.resume-float-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #ff9800;
+  color: white;
+  padding: 0.8rem 1.2rem;
+  border-radius: 50px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+.resume-float-btn:hover {
+  background: #e68900;
+}
+/* Add near bottom of style.css */
+@media (max-width: 600px) {
+  .hero h1 { font-size: 2rem; }
+  nav { flex-direction: column; gap: 1rem; }
+  .card { margin: 0.5rem 0; }
+  .skills-list { flex-direction: column; gap: 0.5rem; }
+}
+AOS.init({
+  duration: 600,
+  offset: 100,
+  once: true,
+  disable: 'mobile'  // Turns off animations on mobile for smoother UX
+});
