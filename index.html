@@ -6,12 +6,10 @@
   <title>Your Name | Resume</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-
   <!-- AOS CSS -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
-  <!-- Navbar -->
   <header data-aos="fade-down">
     <nav>
       <a href="#about">About</a>
@@ -22,24 +20,19 @@
     </nav>
   </header>
 
-  <!-- Hero Section -->
   <section class="hero" data-aos="zoom-in">
     <img src="https://via.placeholder.com/150" alt="Your Photo" class="profile-pic" />
     <h1>Your Name</h1>
     <p>Product Manager | Innovator | Problem Solver</p>
     <a href="#contact" class="btn">Contact Me</a>
+    <a href="assets/resume.pdf" class="btn" download>Download Resume</a>
   </section>
 
-  <!-- About -->
   <section id="about" data-aos="fade-up">
     <h2>About Me</h2>
-    <p>
-      A short bio about who you are, what you do, and what drives you.
-      Keep it punchy and easy to skim.
-    </p>
+    <p>A short bio about who you are, what you do, and what drives you. Keep it punchy and easy to skim.</p>
   </section>
 
-  <!-- Experience -->
   <section id="experience">
     <h2 data-aos="fade-right"><i class="fas fa-briefcase"></i> Experience</h2>
     <div class="card" data-aos="fade-up">
@@ -54,7 +47,6 @@
     </div>
   </section>
 
-  <!-- Projects -->
   <section id="projects">
     <h2 data-aos="fade-left"><i class="fas fa-code"></i> Projects</h2>
     <div class="card" data-aos="zoom-in">
@@ -69,29 +61,22 @@
     </div>
   </section>
 
-  <!-- Skills -->
   <section id="skills" data-aos="fade-up">
     <h2><i class="fas fa-tools"></i> Skills</h2>
     <ul class="skills-list">
       <li data-aos="flip-left"><i class="fab fa-html5"></i> Product Strategy</li>
       <li data-aos="flip-left" data-aos-delay="100"><i class="fab fa-css3-alt"></i> Data-Driven Decisions</li>
-      <li data-aos="flip-left" data-aos-delay="200"><i class="fab fa-js"></i> AI & Automation</li>
+      <li data-aos="flip-left" data-aos-delay="200"><i class="fab fa-js"></i> AI &amp; Automation</li>
       <li data-aos="flip-left" data-aos-delay="300"><i class="fas fa-users"></i> Team Leadership</li>
     </ul>
   </section>
 
-  <!-- Contact -->
   <section id="contact" data-aos="fade-up">
     <h2><i class="fas fa-envelope"></i> Contact Me</h2>
     <p>Email: <a href="mailto:your@email.com">your@email.com</a></p>
     <p>
-      <a href="https://linkedin.com/in/yourprofile" target="_blank">
-        <i class="fab fa-linkedin"></i> LinkedIn
-      </a>
-      |
-      <a href="https://github.com/yourprofile" target="_blank">
-        <i class="fab fa-github"></i> GitHub
-      </a>
+      <a href="https://linkedin.com/in/yourprofile" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a> |
+      <a href="https://github.com/yourprofile" target="_blank"><i class="fab fa-github"></i> GitHub</a>
     </p>
   </section>
 
@@ -102,21 +87,7 @@
   <!-- AOS JS -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    AOS.init({
-      duration: 800,   // animation speed
-      offset: 100,     // trigger point
-      once: true       // animate only once
-    });
+    AOS.init({ duration: 800, offset: 100, once: true });
   </script>
 </body>
 </html>
-<section class="hero" data-aos="zoom-in">
-  <img src="https://via.placeholder.com/150" alt="Your Photo" class="profile-pic" />
-  <h1>Your Name</h1>
-  <p>Product Manager | Innovator | Problem Solver</p>
-  
-  <a href="#contact" class="btn">Contact Me</a>
-  <a href="assets/resume.pdf" class="btn" download>Download Resume</a>
-</section>
-<a href="assets/resume.pdf" class="btn" download>Download Resume</a>
-
