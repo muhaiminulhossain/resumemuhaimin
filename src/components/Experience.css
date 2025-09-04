@@ -1,0 +1,7 @@
+.experience{padding:var(--pad)}
+.experience h2{margin-bottom:18px}
+.exp-item{margin-bottom:var(--gap)}
+.exp-card{display:grid;gap:8px}
+.exp-meta{color:var(--muted);font-size:.95rem}
+.exp-points{margin:0;padding-left:1.1rem}
+.exp-points li{margin:.38rem 0}

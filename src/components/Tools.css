@@ -1,0 +1,7 @@
+.tools{padding:var(--pad)}
+.tools h2{margin-bottom:12px}
+.tools-list{display:flex;flex-wrap:wrap;gap:10px}
+.tools-list li{
+  list-style:none;background:#0f151d;border:1px solid rgba(255,255,255,.08);
+  padding:10px 14px;border-radius:10px
+}

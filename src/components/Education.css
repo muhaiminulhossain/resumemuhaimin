@@ -1,0 +1,3 @@
+.education{padding:var(--pad)}
+.edu-card{display:grid;gap:6px}
+.edu-card p{color:var(--muted)}

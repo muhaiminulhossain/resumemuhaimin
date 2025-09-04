@@ -1,0 +1,14 @@
+.hero{
+  min-height:78vh;display:grid;place-items:center;padding:clamp(50px,6vw,90px) 20px;
+  background: radial-gradient(1200px 600px at 10% -10%, #1b2330 40%, transparent 70%),
+              radial-gradient(900px 500px at 110% 10%, #14202b 30%, transparent 70%),
+              linear-gradient(180deg,#0b0f14 0%, #0e141b 100%);
+}
+.hero-content{max-width:var(--maxw);width:100%;display:grid;gap:var(--gap);justify-items:center;text-align:center}
+.profile-pic{
+  width:132px;height:132px;border-radius:50%;object-fit:cover;border:3px solid rgba(255,255,255,.1);
+  box-shadow:0 10px 24px rgba(0,0,0,.35)
+}
+.hero h1{letter-spacing:.2px}
+.hero p{color:var(--muted);font-size:var(--lead)}
+.hero-buttons{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}

@@ -1,0 +1,29 @@
+:root{
+  /* brand */
+  --bg: #0b0f14;            /* page background (very dark blue/gray) */
+  --panel: #11161d;         /* section background */
+  --card: #131a23;          /* card background */
+  --muted: #95a3b3;         /* secondary text */
+  --text: #e7eef7;          /* primary text */
+  --primary: #4da3ff;       /* accent blue */
+  --primary-2: #7bc6ff;     /* lighter accent */
+  --accent: #ff7f50;        /* coral action */
+  --ok: #38d39f;
+
+  /* layout */
+  --maxw: 1100px;
+  --radius: 14px;
+  --radius-sm: 10px;
+  --shadow: 0 12px 30px rgba(0,0,0,.25);
+  --shadow-soft: 0 10px 20px rgba(0,0,0,.18);
+
+  /* type & spacing */
+  --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, "Helvetica Neue", Arial, "Apple Color Emoji","Segoe UI Emoji";
+  --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  --h1: clamp(2rem, 3.8vw, 3rem);
+  --h2: clamp(1.5rem, 2.6vw, 2.2rem);
+  --h3: clamp(1.1rem, 2vw, 1.3rem);
+  --lead: clamp(1rem, 1.4vw, 1.125rem);
+  --gap: clamp(18px, 2vw, 28px);
+  --pad: clamp(18px, 2.4vw, 28px);
+}

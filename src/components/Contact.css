@@ -1,0 +1,4 @@
+.contact{padding:var(--pad)}
+.contact p{margin:.35rem 0}
+.contact a{color:var(--primary)}
+.contact .row{display:flex;gap:12px;flex-wrap:wrap;margin-top:10px}
