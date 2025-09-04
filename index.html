@@ -1,194 +1,89 @@
 <!DOCTYPE html>
-<section class="hero" data-aos="zoom-in">
-  <img src="assets/profile.jpg" alt="Muhaiminul Hossain" class="profile-pic" />
-  <h1>Muhaiminul Hossain</h1>
-  <p>Head of Product | Innovator | Problem Solver</p>
-  
-  <a href="assets/resume.pdf" class="btn" download target="_blank">Download Resume</a>
-  <a href="#contact" class="btn">Contact Me</a>
-</section>
-  <section id="contact" class="contact">
-  <h2>Contact</h2>
-  <p>Email: muhaimin@example.com</p>
-  <p>Phone: +8801XXXXXXXXX</p>
-  <p>
-    LinkedIn: <a href="https://www.linkedin.com/in/muhaiminulhossain" target="_blank">muhaiminulhossain</a> | 
-    GitHub: <a href="https://github.com/muhaiminulhossain" target="_blank">muhaiminulhossain</a>
-  </p>
-</section>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Muhaiminul Hossain - Resume</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    /* Basic styling for demo */
-    body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 0; background: #f9f9f9; color: #333; }
-    header { background: #0073e6; color: #fff; padding: 2rem; text-align: center; }
-    header h1 { margin: 0; font-size: 2.5rem; }
-    header p { margin: 0.5rem 0 1rem; font-size: 1.2rem; }
-    .btn { display: inline-block; margin: 0.5rem; padding: 0.7rem 1.5rem; background: #ff9800; color: #fff; border-radius: 30px; text-decoration: none; transition: 0.3s; }
-    .btn:hover { background: #e68900; }
-    section { padding: 2rem; max-width: 900px; margin: auto; background: #fff; margin-bottom: 1rem; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-    h2 { border-bottom: 2px solid #0073e6; padding-bottom: 0.3rem; color: #0073e6; }
-    ul { list-style: none; padding: 0; }
-    li { margin-bottom: 0.5rem; }
-    .experience-item { margin-bottom: 1.5rem; }
-    .experience-item h3 { margin: 0; color: #333; }
-    .experience-item h4 { margin: 0.2rem 0 0.5rem; font-weight: normal; color: #666; }
+    /* Basic Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; line-height: 1.6; background: #f4f4f4; color: #333; }
+
+    /* Hero Section */
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      background: #0073e6;
+      color: white;
+      padding: 3rem 1rem;
+      text-align: center;
+    }
+    .hero img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1rem;
+    }
+    .hero h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+    .hero p { font-size: 1.2rem; margin-bottom: 1rem; }
+    .hero .btn {
+      background: #ff9800;
+      color: white;
+      padding: 0.5rem 1.5rem;
+      border-radius: 30px;
+      text-decoration: none;
+      margin: 0.5rem;
+      transition: background 0.3s;
+    }
+    .hero .btn:hover { background: #e68900; }
+
+    /* Contact Section */
+    .contact {
+      background: white;
+      padding: 2rem;
+      margin: 2rem auto;
+      max-width: 900px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    .contact h2 {
+      color: #0073e6;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid #0073e6;
+      padding-bottom: 0.3rem;
+    }
+    .contact p {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+    }
+    .contact a {
+      color: #0073e6;
+      text-decoration: none;
+    }
   </style>
 </head>
 <body>
 
-  <header>
+  <!-- Hero Section -->
+  <section class="hero">
+    <img src="assets/profile.jpg" alt="Muhaiminul Hossain">
     <h1>Muhaiminul Hossain</h1>
-    <p>Head of Product Management | Innovator | Problem Solver</p>
-    <a href="assets/resume.pdf" class="btn" download target="_blank">Download Resume</a>
-  </header>
-
-  <section>
-    <h2>Experience</h2>
-
-    <div class="experience-item">
-      <h3>iFarmer Limited / Head of Product Management</h3>
-      <h4>July 2021 - PRESENT, Dhaka, Bangladesh</h4>
-      <ul>
-        <li>Developed a payment system that secured the winner of VISA Accelerator Programme 2024 cohort.</li>
-        <li>Formulated standardized branding strategies for enhanced market presence.</li>
-        <li>Directed end-to-end UX/UI cycles — wireframing, prototyping, usability testing — enhancing customer satisfaction and retention.</li>
-        <li>Led development of innovative digital solutions like the QR-based Farmer Card, strengthening closed-loop transactions.</li>
-        <li>Integrated data insights and user feedback to optimize features and drive engagement.</li>
-        <li>Spearheaded branding strategies, boosting iFarmer’s market presence and partner trust.</li>
-        <li>Forged strategic partnerships with global accelerators like Google for Startups and Rippleworks.</li>
-        <li>Implemented Agile methodologies and OKR frameworks to foster continuous innovation.</li>
-      </ul>
-    </div>
-
-    <div class="experience-item">
-      <h3>iFarmer Limited / Product Manager</h3>
-      <h4>July 2020 - June 2021, Dhaka, Bangladesh</h4>
-      <ul>
-        <li>Launched ‘SOFOL’, streamlining Agri-Advisory and farmer services.</li>
-        <li>Developed 'Kri-Shop', an e-commerce platform for agri-input retailers.</li>
-        <li>Led the creation of 'i-Core', an admin panel for internal stakeholders.</li>
-        <li>Revamped iFarmer App 2.0, introducing an Investor Dashboard and digital payments.</li>
-        <li>Initiated exploratory blockchain project with InfoCorp in agriculture.</li>
-      </ul>
-    </div>
-
-    <div class="experience-item">
-      <h3>SureCash / Product Manager</h3>
-      <h4>Aug 2019 - June 2020, Dhaka, Bangladesh</h4>
-      <ul>
-        <li>Developed TallyKhata and Rechargewalla to enhance user efficiency.</li>
-        <li>Designed and developed MVP of Digital Wallet Ecosystem, 'TallyPay'.</li>
-        <li>Developed MVP for Credit Scoring Model for Micro Merchants using TallyKhata.</li>
-        <li>Managed UNCDF Shift Fund for digitizing micro-merchants.</li>
-      </ul>
-    </div>
-
-    <div class="experience-item">
-      <h3>BRAC / Senior Executive</h3>
-      <h4>Aug 2018 - May 2019, Dhaka, Bangladesh</h4>
-      <ul>
-        <li>Managed Microfinance Call Center Team and devised growth strategy.</li>
-        <li>Built a CSA database platform for microfinance applications.</li>
-        <li>Created digital loan service processes and applications for microcredit and SME clients.</li>
-        <li>Streamlined branch-level operations for better performance.</li>
-        <li>Oversaw CSA portfolio management and acted as main contact for bKash.</li>
-      </ul>
-    </div>
-
-    <div class="experience-item">
-      <h3>BRAC / Management Professional Staff</h3>
-      <h4>May 2017 - July 2018, Dhaka, Bangladesh</h4>
-      <ul>
-        <li>Designed and implemented multiple new products including E-commerce Loan with ShopUp and Job-Holder's Loan.</li>
-        <li>Empowered underprivileged women financially through mobile platforms.</li>
-        <li>Directed initiative managing surplus funds for microfinance branches.</li>
-      </ul>
-    </div>
-
-    <div class="experience-item">
-      <h3>BRAC / Young Professional Trainee</h3>
-      <h4>May 2016 - April 2017, Dhaka, Bangladesh</h4>
-      <ul>
-        <li>Supervised branch functioning, maintaining a BDT 5 Crore portfolio for 3000 active clients.</li>
-        <li>Conducted market research assessing BRAC Chicken's potential in Dhaka City.</li>
-      </ul>
-    </div>
-
-    <div class="experience-item">
-      <h3>Kaymu Bangladesh / Order Processing Executive</h3>
-      <h4>Aug 2015 - April 2016, Dhaka, Bangladesh</h4>
-      <ul>
-        <li>Secured top commission collection rate (95%) in February 2016.</li>
-        <li>Conceptualised the establishment of two newly defined job posts.</li>
-      </ul>
-    </div>
+    <p>Head of Product | Innovator | Problem Solver</p>
+    <a href="assets/resume.pdf" class="btn" download>Download Resume</a>
+    <a href="#contact" class="btn">Contact Me</a>
   </section>
 
-  <section>
-    <h2>Skills</h2>
-    <ul>
-      <li>Strategic Vision & Product Roadmapping</li>
-      <li>Digital Branding & Marketing</li>
-      <li>Product Lifecycle Management</li>
-      <li>Data Analysis & Business Intelligence</li>
-      <li>Cross-Functional Leadership & Team Building</li>
-      <li>User Experience Design & Optimization</li>
-      <li>Innovation & Growth Hacking</li>
-      <li>Stakeholder & Partnership Management</li>
-      <li>Performance Monitoring & A/B Testing</li>
-      <li>Agile Methodology, OKRs</li>
-      <li>Go-To-Market Planning</li>
-      <li>Software Development Life Cycle</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Tools</h2>
-    <ul>
-      <li>Figma (Intermediate)</li>
-      <li>Notion (Advanced)</li>
-      <li>Miro (Advanced)</li>
-      <li>Jira (Advanced)</li>
-      <li>Trello (Advanced)</li>
-      <li>Metabase (Basic)</li>
-      <li>Mixpanel (Advanced)</li>
-      <li>Google Analytics (Intermediate)</li>
-      <li>GitHub (Basic)</li>
-      <li>PyCharm (Basic)</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Education</h2>
-    <ul>
-      <li>North South University / Bachelor in Business Administration</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Certifications</h2>
-    <ul>
-      <li>Code in Place 2024 by Stanford University</li>
-      <li>Storytelling for a Change by Acumen</li>
-      <li>Social and Business Research Methodology by Institute of Business Administration, University of Dhaka</li>
-      <li>Human Centered Design by BRAC Social Innovation Lab</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Awards</h2>
-    <ul>
-      <li>Managed USD 50,000 grant for the VISA Accelerator Program 2024; implemented POC delivering 113 debit cards to marginalized farmers.</li>
-      <li>Finished in Top 6 in World Blockchain Hackathon 2020</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Languages</h2>
-    <ul>
-      <li>Bengali</li>
-      <li>English</li>
-    </ul>
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:muhaimin@example.com">muhaimin@example.com</a></p>
+    <p>Phone: <a href="tel:+8801XXXXXXXXX">+8801XXXXXXXXX</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/muhaiminulhossain" target="_blank">muhaiminulhossain</a></p>
+    <p>GitHub: <a href="https://github.com/muhaiminulhossain" target="_blank">muhaiminulhossain</a></p>
   </section>
 
 </body>
