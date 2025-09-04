@@ -3,88 +3,82 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Muhaiminul Hossain - Resume</title>
-  <link rel="stylesheet" href="style.css">
-  <style>
-    /* Basic Reset */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: Arial, sans-serif; line-height: 1.6; background: #f4f4f4; color: #333; }
-
-    /* Hero Section */
-    .hero {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      background: #0073e6;
-      color: white;
-      padding: 3rem 1rem;
-      text-align: center;
-    }
-    .hero img {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: 1rem;
-    }
-    .hero h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
-    .hero p { font-size: 1.2rem; margin-bottom: 1rem; }
-    .hero .btn {
-      background: #ff9800;
-      color: white;
-      padding: 0.5rem 1.5rem;
-      border-radius: 30px;
-      text-decoration: none;
-      margin: 0.5rem;
-      transition: background 0.3s;
-    }
-    .hero .btn:hover { background: #e68900; }
-
-    /* Contact Section */
-    .contact {
-      background: white;
-      padding: 2rem;
-      margin: 2rem auto;
-      max-width: 900px;
-      border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    }
-    .contact h2 {
-      color: #0073e6;
-      margin-bottom: 1rem;
-      border-bottom: 2px solid #0073e6;
-      padding-bottom: 0.3rem;
-    }
-    .contact p {
-      font-size: 1.1rem;
-      margin-bottom: 0.5rem;
-    }
-    .contact a {
-      color: #0073e6;
-      text-decoration: none;
-    }
-  </style>
+  <title>Muhaiminul Hossain | Resume</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <img src="assets/profile.jpg" alt="Muhaiminul Hossain">
-    <h1>Muhaiminul Hossain</h1>
-    <p>Head of Product | Innovator | Problem Solver</p>
-    <a href="assets/resume.pdf" class="btn" download>Download Resume</a>
-    <a href="#contact" class="btn">Contact Me</a>
+  <!-- HERO SECTION -->
+  <section id="hero" class="hero">
+    <div class="hero-content">
+      <img src="assets/profile.jpg" alt="Muhaiminul Hossain" class="profile-img">
+      <h1>Muhaiminul Hossain</h1>
+      <p>Head of Product | Innovator | Problem Solver</p>
+      <a href="assets/resume.pdf" class="btn" download>Download Resume</a>
+    </div>
   </section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="contact">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:muhaimin@example.com">muhaimin@example.com</a></p>
-    <p>Phone: <a href="tel:+8801XXXXXXXXX">+8801XXXXXXXXX</a></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/muhaiminulhossain" target="_blank">muhaiminulhossain</a></p>
-    <p>GitHub: <a href="https://github.com/muhaiminulhossain" target="_blank">muhaiminulhossain</a></p>
-  </section>
+  <!-- EXPERIENCE SECTION -->
+  <section id="experience" class="experience">
+    <h2>Experience</h2>
 
-</body>
-</html>
+    <div class="job">
+      <h3>Head of Product Management</h3>
+      <h4>iFarmer Limited | July 2021 - PRESENT, Dhaka, Bangladesh</h4>
+      <ul>
+        <li>Developed a payment system that secured the winner of VISA Accelerator Programme 2024 cohort.</li>
+        <li>Formulated standardized branding strategies for enhanced market presence.</li>
+        <li>Directed end-to-end UX/UI cycles — wireframing, prototyping, usability testing — enhancing customer satisfaction and retention.</li>
+        <li>Led the development and rollout of innovative digital solutions like the QR-based Farmer Card, strengthening closed-loop transactions.</li>
+        <li>Integrated data insights and user feedback to optimize features and drive engagement.</li>
+        <li>Spearheaded branding strategies, boosting iFarmer’s market presence and partner trust.</li>
+        <li>Forged strategic partnerships with global accelerators like Google for Startups and Rippleworks.</li>
+        <li>Implemented Agile methodologies and OKR frameworks to foster continuous innovation.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <h3>Product Manager</h3>
+      <h4>iFarmer Limited | July 2020 - June 2021, Dhaka, Bangladesh</h4>
+      <ul>
+        <li>Launched ‘SOFOL’, streamlining Agri-Advisory and farmer services.</li>
+        <li>Developed 'Kri-Shop', an e-commerce platform for agri-input retailers.</li>
+        <li>Led the creation of 'i-Core', an admin panel designed to integrate iFarmer's products for internal stakeholders.</li>
+        <li>Revamped iFarmer App 2.0, introducing an Investor Dashboard and digital payments.</li>
+        <li>Initiated an exploratory project with InfoCorp on using blockchain technology within the agriculture sector.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <h3>Product Manager</h3>
+      <h4>SureCash | Aug 2019 - June 2020, Dhaka, Bangladesh</h4>
+      <ul>
+        <li>Led the development of TallyKhata and Rechargewalla to enhance efficiency for targeted user bases.</li>
+        <li>Designed and developed MVP of Digital Wallet Ecosystem, 'TallyPay'.</li>
+        <li>Developed and launched an MVP for the Credit Scoring Model for Micro Merchants using the TallyKhata App.</li>
+        <li>Managed UNCDF Shift Fund for digitizing micro-merchants.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <h3>Senior Executive</h3>
+      <h4>BRAC | Aug 2018 - May 2019, Dhaka, Bangladesh</h4>
+      <ul>
+        <li>Managed Microfinance Call Center Team and devised a growth strategy.</li>
+        <li>Built a CSA database platform for microfinance applications.</li>
+        <li>Created digital loan service processes and applications for microcredit and SME clients.</li>
+        <li>Streamlined branch-level operations for better performance.</li>
+        <li>Oversaw CSA portfolio management while functioning as the main contact for bKash in the microfinance sector on a mobile financial platform.</li>
+        <li>Executed strategic plans for the successful celebration of the Bengali New Year in 2019.</li>
+        <li>Implemented training focused on financial education.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <h3>Management Professional Staff</h3>
+      <h4>BRAC | May 2017 - July 2018, Dhaka, Bangladesh</h4>
+      <ul>
+        <li>Designed and implemented multiple new products, including the country's first-ever E-commerce Loan with ShopUp.</li>
+        <li>Created a human-centered design module to empower underprivileged women financially through mobile platforms.</li>
+        <li>Directed initiative managing surplus funds for microfinance branch operations.</li>
+        <li>Created an innovativ
