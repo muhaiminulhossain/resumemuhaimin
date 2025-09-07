@@ -1,33 +1,49 @@
-.navbar {
+.navbar{
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: rgba(11, 15, 20, 0.95);
+  background: var(--panel);
+  border-bottom: 1px solid var(--border);
   backdrop-filter: blur(8px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.navbar ul {
+.navbar .inner{
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0.8rem 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* remove bullets + reset spacing */
+.navbar ul{
   list-style: none;
   display: flex;
-  justify-content: center;
-  gap: 2rem;
-  padding: 1rem;
+  gap: 1.6rem;
   margin: 0;
+  padding: 0;
 }
 
-.navbar a {
+/* link styles */
+.navbar a{
   color: var(--muted);
   text-decoration: none;
   font-weight: 500;
-  transition: color 0.2s ease-in-out;
+  transition: color .2s ease-in-out;
 }
 
-.navbar li.active a {
+.navbar li.active a{
   color: var(--accent);
   font-weight: 700;
 }
 
-.navbar a:hover {
-  color: var(--primary);
+.navbar a:hover{
+  color: var(--accent-hover);
+}
+
+/* make the toggle look like your site buttons if needed */
+.navbar .btn{
+  padding: 8px 12px;
+  border-radius: 8px;
 }

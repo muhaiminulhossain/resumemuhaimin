@@ -1,29 +1,48 @@
-:root{
-  /* brand */
-  --bg: #0b0f14;            /* page background (very dark blue/gray) */
-  --panel: #11161d;         /* section background */
-  --card: #131a23;          /* card background */
-  --muted: #95a3b3;         /* secondary text */
-  --text: #e7eef7;          /* primary text */
-  --primary: #4da3ff;       /* accent blue */
-  --primary-2: #7bc6ff;     /* lighter accent */
-  --accent: #ff7f50;        /* coral action */
-  --ok: #38d39f;
+:root {
+  :root {
+  --chip-bg: #eef2f7;
+  --chip-text: #0b1220;
+}
 
-  /* layout */
+[data-theme="dark"] {
+  --chip-bg: #1a2230;
+  --chip-text: #e6ebf2;
+}
+
+  --font: "Inter", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+
+  /* Layout */
   --maxw: 1100px;
   --radius: 14px;
   --radius-sm: 10px;
-  --shadow: 0 12px 30px rgba(0,0,0,.25);
-  --shadow-soft: 0 10px 20px rgba(0,0,0,.18);
-
-  /* type & spacing */
-  --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, "Helvetica Neue", Arial, "Apple Color Emoji","Segoe UI Emoji";
-  --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
-  --h1: clamp(2rem, 3.8vw, 3rem);
-  --h2: clamp(1.5rem, 2.6vw, 2.2rem);
-  --h3: clamp(1.1rem, 2vw, 1.3rem);
-  --lead: clamp(1rem, 1.4vw, 1.125rem);
-  --gap: clamp(18px, 2vw, 28px);
   --pad: clamp(18px, 2.4vw, 28px);
+
+  /* LIGHT THEME (default) — minimal, elegant */
+  --bg: #f6f7fb;          /* page background */
+  --panel: #ffffff;       /* section panels */
+  --card: #f8fafc;        /* cards */
+  --text: #0b1220;        /* main text */
+  --muted: #5b6574;       /* secondary text */
+  --border: #e6e9ef;      /* card/panel borders */
+  --accent: #0a84ff;      /* buttons/links */
+  --accent-hover: #0066cc;
+
+  /* “Chip” pills (skills/tools) */
+  --chip-bg: #eef2f7;
+  --chip-text: #0b1220;
+}
+
+[data-theme="dark"] {
+  /* DARK THEME — refined slate/ink look */
+  --bg: #0b0f14;
+  --panel: #0f141b;
+  --card: #151b23;
+  --text: #e6ebf2;
+  --muted: #9aa4b2;
+  --border: #1f2732;
+  --accent: #2f8cff;
+  --accent-hover: #1c6ed8;
+
+  --chip-bg: #1a2230;
+  --chip-text: #e6ebf2;
 }

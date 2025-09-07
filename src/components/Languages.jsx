@@ -1,14 +1,17 @@
 import React from "react";
 import "./Languages.css";
 
-export default function Languages(){
+const languages = ["Bengali", "English"];
+
+export default function Languages() {
   return (
-    <section className="languages">
+    <section id="languages" className="languages section">
       <h2>Languages</h2>
-      <div className="card langs">
-        <span className="lang">Bengali</span>
-        <span className="lang">English</span>
-      </div>
+      <ul className="lang-list">
+        {languages.map((lang, i) => (
+          <li key={i} className="lang-item">{lang}</li>
+        ))}
+      </ul>
     </section>
   );
 }

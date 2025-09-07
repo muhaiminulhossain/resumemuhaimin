@@ -1,7 +1,20 @@
-.tools{padding:var(--pad)}
-.tools h2{margin-bottom:12px}
-.tools-list{display:flex;flex-wrap:wrap;gap:10px}
-.tools-list li{
-  list-style:none;background:#0f151d;border:1px solid rgba(255,255,255,.08);
-  padding:10px 14px;border-radius:10px
+.tools { padding: var(--pad); }
+.tools h2 { margin-bottom: 12px; }
+
+.tools-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  padding-left: 0;
+}
+
+.tools-list li {
+  list-style: none;
+  background: var(--chip-bg);     /* ✅ light/dark aware */
+  color: var(--chip-text);        /* ✅ readable in both themes */
+  border: 1px solid var(--border);
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-weight: 500;
 }
