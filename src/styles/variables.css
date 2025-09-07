@@ -1,14 +1,4 @@
 :root {
-  :root {
-  --chip-bg: #eef2f7;
-  --chip-text: #0b1220;
-}
-
-[data-theme="dark"] {
-  --chip-bg: #1a2230;
-  --chip-text: #e6ebf2;
-}
-
   --font: "Inter", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
 
   /* Layout */
@@ -17,32 +7,31 @@
   --radius-sm: 10px;
   --pad: clamp(18px, 2.4vw, 28px);
 
-  /* LIGHT THEME (default) — minimal, elegant */
-  --bg: #f6f7fb;          /* page background */
+  /* Light Theme */
+  --bg: #f8fafc;          /* page background */
   --panel: #ffffff;       /* section panels */
-  --card: #f8fafc;        /* cards */
-  --text: #0b1220;        /* main text */
-  --muted: #5b6574;       /* secondary text */
-  --border: #e6e9ef;      /* card/panel borders */
-  --accent: #0a84ff;      /* buttons/links */
-  --accent-hover: #0066cc;
+  --card: #f3f4f6;        /* cards */
+  --text: #1e293b;        /* dark slate text */
+  --muted: #475569;       /* secondary gray text */
+  --border: #e2e8f0;      /* soft borders */
+  --accent: #2563eb;      /* muted blue */
+  --accent-hover: #1e40af;
 
-  /* “Chip” pills (skills/tools) */
-  --chip-bg: #eef2f7;
-  --chip-text: #0b1220;
+  --chip-bg: #e2e8f0;
+  --chip-text: #1e293b;
 }
 
 [data-theme="dark"] {
-  /* DARK THEME — refined slate/ink look */
-  --bg: #0b0f14;
-  --panel: #0f141b;
-  --card: #151b23;
-  --text: #e6ebf2;
-  --muted: #9aa4b2;
-  --border: #1f2732;
-  --accent: #2f8cff;
-  --accent-hover: #1c6ed8;
+  /* Dark Theme */
+  --bg: #0f172a;          /* deep slate */
+  --panel: #1e293b;       /* darker panels */
+  --card: #27364a;        /* slightly lighter cards */
+  --text: #f1f5f9;        /* near white text */
+  --muted: #94a3b8;       /* muted gray-blue */
+  --border: #334155;      /* subtle border */
+  --accent: #3b82f6;      /* bright but soft blue */
+  --accent-hover: #2563eb;
 
-  --chip-bg: #1a2230;
-  --chip-text: #e6ebf2;
+  --chip-bg: #334155;
+  --chip-text: #f1f5f9;
 }
