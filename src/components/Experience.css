@@ -54,10 +54,22 @@
   animation: fadeInUp .6s ease forwards;
 }
 
+/* role (accent) + company (bold neutral) */
 .timeline-content h3 {
-  margin-bottom: .3rem;
+  margin: 0 0 .3rem 0;
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+.timeline-content h3 .role {
   color: var(--accent);
-  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.timeline-content h3 .company {
+  color: var(--text);
+  font-weight: 700;
+  margin-left: 4px;
 }
 
 .timeline-content .meta {
