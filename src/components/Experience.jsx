@@ -9,6 +9,13 @@ const experiences = [
     period: "July 2021 – Present",
     location: "Dhaka, Bangladesh",
     details: [
+      "Scaled iFarmer investment platform to 34,063 investors, managing BDT 15.9B ($145M+) in lifetime investments, with 65% YoY user growth (2025 vs 2024).",
+      "Increased financial inclusion with 8,496 reinvestments and active base of 21,355 investors in last 3 months.",
+      "Expanded Sofol farmer app to 140k+ registered farmers, enabling BDT 1.8B in financing (bank + non-bank) and activating 629 IFC agents & 69 market facilitators.",
+      "Built KriSHOP marketplace with 11,945 retailers, driving 36,083 successful orders (BDT 749M GMV) and achieving 80% order success rate.",
+      "Grew product catalog to 2,355 SKUs and maintained 9,500+ active retailers.",
+      "Established farmer community platform generating 3,200+ posts, 699 active users, and 87 daily engagements.",
+      "Won VISA Accelerator Program 2024, delivering 113 QR Farmer Cards in pilot with USD 50k grant.",
       "Developed a payment system that won the VISA Accelerator Programme 2024 cohort.",
       "Directed end-to-end UX/UI cycles—wireframing, prototyping, usability testing—boosting satisfaction and retention.",
       "Led rollout of QR-based Farmer Card to strengthen closed-loop transactions.",
