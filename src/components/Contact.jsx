@@ -1,20 +1,48 @@
 import React from "react";
 import "./Contact.css";
 
-export default function Contact(){
+export default function Contact() {
   return (
-    <section id="contact" className="contact">
+    <div className="contact">
       <h2>Contact</h2>
-      <div className="card">
-        <p><strong>Address:</strong> 15, R: 9, Block: J, Bashundhara R/A, Dhaka, Bangladesh</p>
-        <p><strong>Phone:</strong> +8801710301229</p>
-        <p><strong>Email:</strong> <a href="mailto:hossainmuhaiminul@gmail.com">hossainmuhaiminul@gmail.com</a></p>
-        <div className="row">
-          <a className="btn ghost" href="https://linkedin.com/in/muhaiminulhossain" target="_blank" rel="noreferrer">LinkedIn</a>
-          <a className="btn ghost" href="https://github.com/muhaiminulhossain" target="_blank" rel="noreferrer">GitHub</a>
-          <a className="btn" href="/assets/resume.pdf" download>Download PDF</a>
-        </div>
+
+      <p className="lead">
+        Open to product leadership, strategy, and growth roles. Let’s build something that ships and sticks.
+      </p>
+
+      <ul className="contact-list">
+        <li>
+          <span className="label">Email</span>
+          <a href="mailto:hossain.muhaiminul@gmail.com">hossain.muhaiminul@gmail.com</a>
+        </li>
+        <li>
+          <span className="label">Location</span>
+          <span>Dhaka, Bangladesh</span>
+        </li>
+      </ul>
+
+      <div className="actions">
+        <a className="btn" href="mailto:hossain.muhaiminul@gmail.com">Email Me</a>
+        <a
+          className="btn"
+          href="https://www.linkedin.com/in/muhaiminulhossain/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          LinkedIn
+        </a>
+        <a
+          className="btn"
+          href="https://github.com/muhaiminulhossain"
+          target="_blank"
+          rel="noreferrer"
+        >
+          GitHub
+        </a>
+        <a className="btn" href="/assets/resume.pdf" download>
+          Download Resume (PDF)
+        </a>
       </div>
-    </section>
+    </div>
   );
 }

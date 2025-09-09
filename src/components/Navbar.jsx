@@ -1,9 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./Navbar.css";
 import ThemeToggle from "./ThemeToggle";
 
-
 const Navbar = () => {
+  useEffect(() => {
+    console.log("[Navbar] mounted");
+    return () => console.log("[Navbar] unmounted");
+  }, []);
+  // ...rest of your component...
+
   const [activeSection, setActiveSection] = useState("hero");
 
   useEffect(() => {
@@ -51,9 +56,6 @@ const Navbar = () => {
           </li>
           <li className={activeSection === "awards" ? "active" : ""}>
             <a href="#awards">Awards</a>
-          </li>
-          <li className={activeSection === "languages" ? "active" : ""}>
-            <a href="#languages">Languages</a>
           </li>
           <li className={activeSection === "contact" ? "active" : ""}>
             <a href="#contact">Contact</a>
