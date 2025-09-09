@@ -46,3 +46,6 @@ export default function App() {
     </>
   );
 }
+<footer style={{textAlign:'center', opacity:.6, padding:'10px 0'}}>
+  v{new Date().toISOString().slice(0,16).replace('T',' ')}
+</footer>
