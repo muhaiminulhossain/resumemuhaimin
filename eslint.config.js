@@ -1,8 +1,9 @@
-// eslint.config.js
+// eslint.config.js — Flat config for ESLint v9
 import js from "@eslint/js";
 import reactPlugin from "eslint-plugin-react";
 import importPlugin from "eslint-plugin-import";
 import globals from "globals";
+import babelParser from "@babel/eslint-parser";
 
 export default [
   {
@@ -10,17 +11,18 @@ export default [
     ignores: ["dist/**", "node_modules/**"],
 
     languageOptions: {
-      ecmaVersion: "latest",
-      sourceType: "module",
+      parser: babelParser,
+      parserOptions: {
+        requireConfigFile: false,
+        babelOptions: {
+          presets: ["@babel/preset-react"],
+        },
+        ecmaVersion: "latest",
+        sourceType: "module",
+      },
       globals: {
         ...globals.browser,
         ...globals.node,
-      },
-      // 👇 tell ESLint/espree to understand JSX
-      parserOptions: {
-        ecmaFeatures: {
-          jsx: true,
-        },
       },
     },
 
@@ -30,9 +32,7 @@ export default [
     },
 
     settings: {
-      // Let the react plugin auto-detect your React version
       react: { version: "detect" },
-      // Case-sensitive import resolution + known extensions
       "import/resolver": {
         node: {
           extensions: [".js", ".jsx"],
@@ -41,19 +41,21 @@ export default [
     },
 
     rules: {
-      // Base JS rules
+      // base JS
       ...js.configs.recommended.rules,
 
-      // React rules
+      // react
       ...reactPlugin.configs.recommended.rules,
-      "react/react-in-jsx-scope": "off", // not needed since React 17+
+      "react/react-in-jsx-scope": "off",
 
-      // Import plugin: ensure files exist & match case
+      // imports must exist and match case (prevents ThemeToggle vs Themetoggle bugs)
       "import/no-unresolved": ["error", { caseSensitive: true }],
 
-      // Optional niceties
+      // niceties
       "no-unused-vars": ["warn", { argsIgnorePattern: "^_", varsIgnorePattern: "^_" }],
-      "no-console": "off",
+
+      // we don’t use PropTypes in this project
+      "react/prop-types": "off",
     },
   },
 ];

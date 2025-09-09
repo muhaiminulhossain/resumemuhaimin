@@ -11,8 +11,8 @@ const Hero = () => {
         <div className="hero-buttons">
           <a href="/assets/resume.pdf" download className="btn">Download Resume</a>
           <a href="#contact" className="btn btn-outline">Contact Me</a>
-          <a href="https://linkedin.com/in/muhaiminulhossain" target="_blank" className="btn btn-outline">LinkedIn</a>
-          <a href="https://github.com/muhaiminulhossain" target="_blank" className="btn btn-outline">GitHub</a>
+          <a href="https://linkedin.com/in/muhaiminulhossain" target="_blank" rel="noreferrer" className="btn btn-outline">LinkedIn</a>
+          <a href="https://github.com/muhaiminulhossain" target="_blank" rel="noreferrer" className="btn btn-outline">GitHub</a>
         </div>
       </div>
     </section>
