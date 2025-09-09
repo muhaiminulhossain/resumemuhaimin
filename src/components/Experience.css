@@ -1,39 +1,115 @@
-import React, { useState, useEffect } from "react";
-import "./Navbar.css";
+.experience {
+  padding: var(--pad);
+}
 
-const Navbar = () => {
-  const [activeSection, setActiveSection] = useState("hero");
+.experience h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--text);
+}
 
-  useEffect(() => {
-    const sections = document.querySelectorAll("section");
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id);
-          }
-        });
-      },
-      { threshold: 0.6 }
-    );
+/* ===== Vertical Timeline (Desktop) ===== */
+.timeline {
+  position: relative;
+  margin: 0 auto;
+  padding: 0 1rem;
+  max-width: 900px;
+}
 
-    sections.forEach((sec) => observer.observe(sec));
-    return () => observer.disconnect();
-  }, []);
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 25px;
+  width: 2px;
+  height: 100%;
+  background: var(--border);
+}
 
-  return (
-    <nav className="navbar">
-      <ul>
-        <li className={activeSection === "hero" ? "active" : ""}><a href="#hero">Home</a></li>
-        <li className={activeSection === "summary" ? "active" : ""}><a href="#summary">Summary</a></li>
-        <li className={activeSection === "experience" ? "active" : ""}><a href="#experience">Experience</a></li>
-        <li className={activeSection === "skills" ? "active" : ""}><a href="#skills">Skills</a></li>
-        <li className={activeSection === "tools" ? "active" : ""}><a href="#tools">Tools</a></li>
-        <li className={activeSection === "education" ? "active" : ""}><a href="#education">Education</a></li>
-        <li className={activeSection === "contact" ? "active" : ""}><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  );
-};
+.timeline-item {
+  display: flex;
+  position: relative;
+  margin-bottom: 2rem;
+}
 
-export default Navbar;
+.timeline-dot {
+  position: absolute;
+  left: 17px;
+  width: 16px;
+  height: 16px;
+  background: var(--accent);
+  border-radius: 50%;
+  top: 10px;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.25); /* accent glow */
+}
+
+.timeline-content {
+  margin-left: 60px;
+  flex: 1;
+  padding: 1rem 1.5rem;
+  background: var(--card);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, .06);
+  animation: fadeInUp .6s ease forwards;
+}
+
+.timeline-content h3 {
+  margin-bottom: .3rem;
+  color: var(--accent);
+  font-size: 1.1rem;
+}
+
+.timeline-content .meta {
+  font-size: .9rem;
+  color: var(--muted);
+  margin-bottom: .8rem;
+}
+
+.timeline-content ul {
+  padding-left: 1.2rem;
+  margin: 0;
+}
+
+.timeline-content li {
+  margin-bottom: .4rem;
+  color: var(--text);
+}
+
+/* ===== Animation ===== */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* ===== Horizontal Timeline (Mobile) ===== */
+@media (max-width: 768px) {
+  .timeline {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    padding: 1rem 0;
+    max-width: 100%;
+    scroll-snap-type: x mandatory;
+  }
+
+  .timeline::before {
+    display: none; /* hide vertical line */
+  }
+
+  .timeline-item {
+    flex: 0 0 85%;
+    margin-bottom: 0;
+    position: relative;
+    scroll-snap-align: start;
+  }
+
+  .timeline-dot {
+    display: none; /* hide dots */
+  }
+
+  .timeline-content {
+    margin-left: 0;
+    min-height: 220px;
+  }
+}
