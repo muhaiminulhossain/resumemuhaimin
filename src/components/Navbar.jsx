@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Navbar.css";
-import ThemeToggle from "./Themetoggle";
+import ThemeToggle from "./ThemeToggle";
 
 const Navbar = () => {
   const [activeSection, setActiveSection] = useState("hero");
