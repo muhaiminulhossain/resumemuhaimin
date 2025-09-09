@@ -1,29 +1,59 @@
-import js from '@eslint/js'
-import globals from 'globals'
-import reactHooks from 'eslint-plugin-react-hooks'
-import reactRefresh from 'eslint-plugin-react-refresh'
-import { defineConfig, globalIgnores } from 'eslint/config'
+// eslint.config.js
+import js from "@eslint/js";
+import reactPlugin from "eslint-plugin-react";
+import importPlugin from "eslint-plugin-import";
+import globals from "globals";
 
-export default defineConfig([
-  globalIgnores(['dist']),
+export default [
   {
-    files: ['**/*.{js,jsx}'],
-    extends: [
-      js.configs.recommended,
-      reactHooks.configs['recommended-latest'],
-      reactRefresh.configs.vite,
-    ],
+    files: ["**/*.{js,jsx}"],
+    ignores: ["dist/**", "node_modules/**"],
+
     languageOptions: {
-      ecmaVersion: 2020,
-      globals: globals.browser,
+      ecmaVersion: "latest",
+      sourceType: "module",
+      globals: {
+        ...globals.browser,
+        ...globals.node,
+      },
+      // 👇 tell ESLint/espree to understand JSX
       parserOptions: {
-        ecmaVersion: 'latest',
-        ecmaFeatures: { jsx: true },
-        sourceType: 'module',
+        ecmaFeatures: {
+          jsx: true,
+        },
       },
     },
+
+    plugins: {
+      react: reactPlugin,
+      import: importPlugin,
+    },
+
+    settings: {
+      // Let the react plugin auto-detect your React version
+      react: { version: "detect" },
+      // Case-sensitive import resolution + known extensions
+      "import/resolver": {
+        node: {
+          extensions: [".js", ".jsx"],
+        },
+      },
+    },
+
     rules: {
-      'no-unused-vars': ['error', { varsIgnorePattern: '^[A-Z_]' }],
+      // Base JS rules
+      ...js.configs.recommended.rules,
+
+      // React rules
+      ...reactPlugin.configs.recommended.rules,
+      "react/react-in-jsx-scope": "off", // not needed since React 17+
+
+      // Import plugin: ensure files exist & match case
+      "import/no-unresolved": ["error", { caseSensitive: true }],
+
+      // Optional niceties
+      "no-unused-vars": ["warn", { argsIgnorePattern: "^_", varsIgnorePattern: "^_" }],
+      "no-console": "off",
     },
   },
-])
+];
