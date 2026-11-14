@@ -1,4 +1,5 @@
 import { profile, stats } from "../data/resume";
+import EmailButton from "./EmailButton";
 
 export default function Hero() {
   return (
@@ -21,9 +22,7 @@ export default function Hero() {
             <a className="btn btn-ghost" href={profile.linkedin} target="_blank" rel="noreferrer">
               LinkedIn
             </a>
-            <a className="btn btn-ghost" href={`mailto:${profile.email}`}>
-              Email
-            </a>
+            <EmailButton />
           </div>
         </div>
 

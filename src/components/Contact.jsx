@@ -1,4 +1,5 @@
 import { profile } from "../data/resume";
+import EmailButton from "./EmailButton";
 
 export default function Contact() {
   return (
@@ -11,9 +12,7 @@ export default function Contact() {
             Open to conversations on product leadership, AI in health and financial inclusion,
             advisory work and mentoring.
           </p>
-          <a className="contact-email" href={`mailto:${profile.email}`}>
-            {profile.email}
-          </a>
+          <EmailButton className="contact-email">{profile.email}</EmailButton>
           <div className="hero-actions">
             <a className="btn" href={profile.resume} download>
               Download résumé (PDF)
