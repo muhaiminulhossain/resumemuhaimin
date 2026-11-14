@@ -1,22 +1,47 @@
-import React from "react";
-import "./Hero.css";
+import { profile, stats } from "../data/resume";
 
-const Hero = () => {
+export default function Hero() {
   return (
-    <section className="hero">
-      <div className="hero-content">
-        <img src="/assets/profile.jpg" alt="Muhaiminul Hossain" className="profile-pic" />
-        <h1>Muhaiminul Hossain</h1>
-        <p>Head of Product Management | AgriTech & FinTech Strategist</p>
-        <div className="hero-buttons">
-          <a href="/assets/resume.pdf" download className="btn">Download Resume</a>
-          <a href="#contact" className="btn btn-outline">Contact Me</a>
-          <a href="https://linkedin.com/in/muhaiminulhossain" target="_blank" rel="noreferrer" className="btn btn-outline">LinkedIn</a>
-          <a href="https://github.com/muhaiminulhossain" target="_blank" rel="noreferrer" className="btn btn-outline">GitHub</a>
+    <section id="top" className="hero">
+      <div className="container hero-grid">
+        <div className="hero-copy">
+          <p className="eyebrow">
+            <span className="pulse" aria-hidden="true" />
+            {profile.current}
+          </p>
+          <h1 className="display">{profile.name}</h1>
+          <p className="hero-role">
+            {profile.headline} <span className="sep">/</span> {profile.focus}
+          </p>
+          <p className="hero-intro">{profile.intro}</p>
+          <div className="hero-actions">
+            <a className="btn" href={profile.resume} download>
+              Download résumé
+            </a>
+            <a className="btn btn-ghost" href={profile.linkedin} target="_blank" rel="noreferrer">
+              LinkedIn
+            </a>
+            <a className="btn btn-ghost" href={`mailto:${profile.email}`}>
+              Email
+            </a>
+          </div>
         </div>
+
+        <figure className="hero-photo">
+          <img src={profile.photo} alt="Portrait of Muhaiminul Hossain" />
+        </figure>
+      </div>
+
+      <div className="container">
+        <dl className="stats">
+          {stats.map((s) => (
+            <div key={s.label} className="stat">
+              <dt>{s.label}</dt>
+              <dd>{s.value}</dd>
+            </div>
+          ))}
+        </dl>
       </div>
     </section>
   );
-};
-
-export default Hero;
+}

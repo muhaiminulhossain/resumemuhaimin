@@ -1,25 +1,22 @@
-// src/App.jsx
-import React, { useEffect } from "react";
-import "./App.css";
+import { useEffect } from "react";
+import "./styles.css";
 
-// Top bar
 import Navbar from "./components/Navbar";
-
-// Sections
 import Hero from "./components/Hero";
-import Summary from "./components/Summary";
+import Now from "./components/Now";
 import Experience from "./components/Experience";
-import Skills from "./components/Skills";
-import Tools from "./components/Tools";
-import Education from "./components/Education";
-import Certifications from "./components/Certifications";
-import Awards from "./components/Awards";
+import Expertise from "./components/Expertise";
+import Recognition from "./components/Recognition";
 import Contact from "./components/Contact";
 
 export default function App() {
-  // Reveal-on-scroll (once per element)
+  // Fade sections in once as they scroll into view.
   useEffect(() => {
     const els = document.querySelectorAll(".reveal");
+    if (!("IntersectionObserver" in window)) {
+      els.forEach((el) => el.classList.add("show"));
+      return;
+    }
     const io = new IntersectionObserver(
       (entries) => {
         entries.forEach((e) => {
@@ -29,7 +26,7 @@ export default function App() {
           }
         });
       },
-      { threshold: 0.12 }
+      { threshold: 0.1, rootMargin: "0px 0px -40px 0px" }
     );
     els.forEach((el) => io.observe(el));
     return () => io.disconnect();
@@ -37,48 +34,15 @@ export default function App() {
 
   return (
     <>
-      {/* Fixed/sticky top nav */}
       <Navbar />
-
-      {/* Centered page container */}
-      <div className="wrapper">
-        {/* Each section wrapped with an id that matches the Navbar links */}
-        <section id="hero" className="section reveal">
-          <Hero />
-        </section>
-
-        <section id="summary" className="section reveal">
-          <Summary />
-        </section>
-
-        <section id="experience" className="section reveal">
-          <Experience />
-        </section>
-
-        <section id="skills" className="section reveal">
-          <Skills />
-        </section>
-
-        <section id="tools" className="section reveal">
-          <Tools />
-        </section>
-
-        <section id="education" className="section reveal">
-          <Education />
-        </section>
-
-        <section id="certifications" className="section reveal">
-          <Certifications />
-        </section>
-
-        <section id="awards" className="section reveal">
-          <Awards />
-        </section>
-
-        <section id="contact" className="section reveal">
-          <Contact />
-        </section>
-      </div>
+      <main>
+        <Hero />
+        <Now />
+        <Experience />
+        <Expertise />
+        <Recognition />
+        <Contact />
+      </main>
     </>
   );
 }

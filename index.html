@@ -2,9 +2,42 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React</title>
+    <title>Muhaiminul Hossain — Product Leader, AI & Digital Platforms</title>
+    <meta
+      name="description"
+      content="Muhaiminul Hossain is a senior product leader with 10+ years building digital platforms, payments and AI products across emerging markets. Director of Technology & Product Management at Spreeha Foundation."
+    />
+    <meta property="og:type" content="profile" />
+    <meta property="og:title" content="Muhaiminul Hossain — Product Leader, AI & Digital Platforms" />
+    <meta
+      property="og:description"
+      content="10+ years building digital platforms, payments and AI products across emerging markets."
+    />
+    <meta property="og:url" content="https://muhaiminonapage.netlify.app/" />
+    <meta property="og:image" content="https://muhaiminonapage.netlify.app/assets/portrait.jpg" />
+    <meta name="theme-color" content="#f5f3ee" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0e1012" media="(prefers-color-scheme: dark)" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <script>
+      // Apply the saved or system theme before first paint.
+      (function () {
+        var t = null;
+        try { t = localStorage.getItem("theme"); } catch (e) {}
+        if (t !== "light" && t !== "dark") {
+          t = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        }
+        document.documentElement.setAttribute("data-theme", t);
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

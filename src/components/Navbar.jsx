@@ -1,72 +1,67 @@
-import React, { useEffect, useState } from "react";
-import "./Navbar.css";
+import { useEffect, useState } from "react";
 import ThemeToggle from "./ThemeToggle";
+import { profile } from "../data/resume";
 
-const Navbar = () => {
+const links = [
+  { id: "now", label: "Now" },
+  { id: "experience", label: "Experience" },
+  { id: "expertise", label: "Expertise" },
+  { id: "recognition", label: "Recognition" },
+  { id: "contact", label: "Contact" },
+];
+
+export default function Navbar() {
+  const [active, setActive] = useState("");
+  const [scrolled, setScrolled] = useState(false);
+
   useEffect(() => {
-    console.log("[Navbar] mounted");
-    return () => console.log("[Navbar] unmounted");
-  }, []);
-  // ...rest of your component...
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
 
-  const [activeSection, setActiveSection] = useState("hero");
-
-  useEffect(() => {
-    const sections = document.querySelectorAll("section");
-
-    const observer = new IntersectionObserver(
+    const io = new IntersectionObserver(
       (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id);
-          }
+        entries.forEach((e) => {
+          if (e.isIntersecting) setActive(e.target.id);
         });
       },
-      { threshold: 0.6 }
+      { rootMargin: "-45% 0px -50% 0px" }
     );
+    links.forEach(({ id }) => {
+      const el = document.getElementById(id);
+      if (el) io.observe(el);
+    });
 
-    sections.forEach((section) => observer.observe(section));
-    return () => observer.disconnect();
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      io.disconnect();
+    };
   }, []);
 
   return (
-    <nav className="navbar">
-      <div className="inner">
-        <ul>
-          <li className={activeSection === "hero" ? "active" : ""}>
-            <a href="#hero">Home</a>
-          </li>
-          <li className={activeSection === "summary" ? "active" : ""}>
-            <a href="#summary">Summary</a>
-          </li>
-          <li className={activeSection === "experience" ? "active" : ""}>
-            <a href="#experience">Experience</a>
-          </li>
-          <li className={activeSection === "skills" ? "active" : ""}>
-            <a href="#skills">Skills</a>
-          </li>
-          <li className={activeSection === "tools" ? "active" : ""}>
-            <a href="#tools">Tools</a>
-          </li>
-          <li className={activeSection === "education" ? "active" : ""}>
-            <a href="#education">Education</a>
-          </li>
-          <li className={activeSection === "certifications" ? "active" : ""}>
-            <a href="#certifications">Certifications</a>
-          </li>
-          <li className={activeSection === "awards" ? "active" : ""}>
-            <a href="#awards">Awards</a>
-          </li>
-          <li className={activeSection === "contact" ? "active" : ""}>
-            <a href="#contact">Contact</a>
-          </li>
-        </ul>
-
-        {/* 🌙 / ☀️ toggle button */}
-        <ThemeToggle />
+    <header className={`nav ${scrolled ? "is-scrolled" : ""}`}>
+      <div className="nav-inner">
+        <a href="#top" className="monogram" aria-label="Back to top">
+          MH
+        </a>
+        <nav aria-label="Sections">
+          <ul className="nav-links">
+            {links.map((l) => (
+              <li key={l.id}>
+                <a href={`#${l.id}`} className={active === l.id ? "is-active" : ""}>
+                  {l.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+        <div className="nav-actions">
+          <a className="btn btn-small" href={profile.resume} download>
+            Résumé
+          </a>
+          <ThemeToggle />
+        </div>
       </div>
-    </nav>
+    </header>
   );
-};
-
-export default Navbar;
+}

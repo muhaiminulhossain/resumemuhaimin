@@ -1,46 +1,52 @@
-import React, { useEffect, useState } from "react";
-import "./ThemeToggle.css";
+import { useState } from "react";
 
-const SunIcon = ({ className }) => (
-  <svg className={className} viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
-    <path fill="currentColor" d="M12 4a1 1 0 0 1 1-1h0a1 1 0 1 1-2 0h0a1 1 0 0 1 1 1Zm0 17a1 1 0 0 1 1 1h0a1 1 0 1 1-2 0h0a1 1 0 0 1 1-1Zm8-8a1 1 0 0 1 1-1h0a1 1 0 1 1 0 2h0a1 1 0 0 1-1-1ZM3 12a1 1 0 0 1 1-1h0a1 1 0 1 1 0 2h0a1 1 0 0 1-1-1Zm13.657-7.071a1 1 0 0 1 1.414 1.414h0a1 1 0 1 1-1.414-1.414ZM5.93 18.071a1 1 0 0 1 1.415 1.415h0A1 1 0 0 1 5.93 18.07Zm12.142 1.415a1 1 0 0 1-1.414-1.415h0a1 1 0 1 1 1.414 1.415ZM7.343 4.93A1 1 0 0 1 5.93 3.515h0A1 1 0 1 1 7.343 4.93ZM12 7a5 5 0 1 1 0 10A5 5 0 0 1 12 7Z"/>
-  </svg>
-);
-
-const MoonIcon = ({ className }) => (
-  <svg className={className} viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
-    <path fill="currentColor" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/>
-  </svg>
-);
+const readTheme = () =>
+  document.documentElement.getAttribute("data-theme") === "dark" ? "dark" : "light";
 
 export default function ThemeToggle() {
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState(readTheme);
+  const isDark = theme === "dark";
 
-  useEffect(() => {
-    const saved = localStorage.getItem("theme") || "light";
-    setTheme(saved);
-    document.documentElement.setAttribute("data-theme", saved);
-  }, []);
-
-  const toggleTheme = () => {
-    const next = theme === "light" ? "dark" : "light";
+  const toggle = () => {
+    const next = isDark ? "light" : "dark";
     setTheme(next);
     document.documentElement.setAttribute("data-theme", next);
-    localStorage.setItem("theme", next);
+    try {
+      localStorage.setItem("theme", next);
+    } catch {
+      /* storage unavailable: theme still applies for this visit */
+    }
   };
-
-  const isDark = theme === "dark";
 
   return (
     <button
       type="button"
-      className={`toggle ${theme}`}
-      onClick={toggleTheme}
-      aria-label={`Activate ${isDark ? "light" : "dark"} mode`}
-      aria-pressed={isDark}
+      className="icon-btn"
+      onClick={toggle}
+      aria-label={`Switch to ${isDark ? "light" : "dark"} mode`}
+      title={`Switch to ${isDark ? "light" : "dark"} mode`}
     >
-      <span className="track" />
-      <span className="thumb">{isDark ? <MoonIcon /> : <SunIcon />}</span>
+      {isDark ? (
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+          <circle cx="12" cy="12" r="4.5" fill="none" stroke="currentColor" strokeWidth="1.8" />
+          <path
+            d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"
+            stroke="currentColor"
+            strokeWidth="1.8"
+            strokeLinecap="round"
+          />
+        </svg>
+      ) : (
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+          <path
+            d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7Z"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.8"
+            strokeLinejoin="round"
+          />
+        </svg>
+      )}
     </button>
   );
 }
